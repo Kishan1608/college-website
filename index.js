@@ -3,6 +3,8 @@ var fs = require('fs');
 var path = require('path');
 
 var server = http.createServer();
+const port = 5000;
+const hostname = '0.0.0.0';
 
 server.on('request',(req,res) => {
     if(req.url == '/'){
@@ -34,7 +36,7 @@ server.on('request',(req,res) => {
         res.writeHead(200,{'Content-Type':'text/html'});
         res.end("No page found");
     }
-}).listen(5000);
+}).listen(port,hostname);
 
 
 
